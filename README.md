@@ -1,5 +1,10 @@
 # Dotbot
 
+<!-- markdownlint-disable -->
+<p align="center">
+  <img src="./assets/dotbot.png" alt="Dotbot" title="Dotbot">
+</p>
+<!-- markdownlint-enable -->
 Dotbot is a script that helps you manage your dotfiles and directories in a convenient way. It allows you to selectively choose which files and folders to keep and organizes them in a specified project location. Dotbot also provides integration with Git for version control.
 
 ## Features
