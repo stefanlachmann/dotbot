@@ -1,4 +1,5 @@
 import os
+import shutil
 import subprocess
 
 def test_copy_dotbot_entries():

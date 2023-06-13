@@ -1,7 +1,9 @@
 import os
+from unittest.main import main
 
 dotbot_list = []
 dotbots_file = "dotbots_list.txt"
+
 
 # Process files
 files_temp = os.listdir(os.path.expanduser("~"))
@@ -38,9 +40,9 @@ for folder_name in folders_temp:
 
 # Prompt for location on disk
 location = input(
-    f"Enter the project location [default: {os.path.expanduser('~')}/project/dotbot]: ")
+    f"Enter the project location [default: {os.path.expanduser('~')}/projects/dotbot]: ")
 if not location:
-    location = os.path.expanduser("~/project/dotbot")
+    location = os.path.expanduser("~/projects/dotbot")
 
 # Set the environment variable
 os.environ["LOCATION"] = location
@@ -60,13 +62,13 @@ with open(dotbots_file, "w") as file:
         file.write(entry + "\n")
 
 # Read each entry from the list and check if it exists
-for entry in dotbot_list:
-    fullpath = os.path.join(os.path.expanduser("~"), entry)
+# for entry in dotbot_list:
+#     fullpath = os.path.join(os.path.expanduser("~"), entry)
 
-    if os.path.exists(fullpath):
-        print(f"Entry '{entry}' exists at '{fullpath}'.")
-    else:
-        print(f"Entry '{entry}' does not exist at '{fullpath}'.")
+#     if os.path.exists(fullpath):
+#         print(f"Entry '{entry}' exists at '{fullpath}'.")
+#     else:
+#         print(f"Entry '{entry}' does not exist at '{fullpath}'.")
 
 run_dotbot = input("Do you wish to run dotbot now? (y/n): ")
 if run_dotbot == "y":
