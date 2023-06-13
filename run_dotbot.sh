@@ -3,8 +3,9 @@
 # Exit on error
 set -e
 
-# Read the location from the environment variable
-location="$LOCATION"
+# Read the location from the environment variable    
+# shellcheck disable=SC2153
+location="$LOCATION" || $DOTBOT_LOCATION
 
 # Verify if the location exists
 while [[ ! -d "$location" ]]; do
