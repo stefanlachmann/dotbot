@@ -10,7 +10,8 @@ Dotbot is a script that helps you manage your dotfiles and directories in a conv
 ## Features
 
 - Interactively select and organize dotfiles and directories.
-- Specify a project location for storing the selected dotfiles and directories.
+- Specify a project location for storing the selected dotfiles and directories,
+  can also be done by setting an env `$DOTBOT_LOCATION=/path/to/location`.
 - Initialize a Git repository in the project location for version control.
 - Generate a list of selected dotfiles and directories in a text file.
 - Verify the existence of selected dotfiles and directories.
@@ -35,13 +36,16 @@ python3 dotbot.py
 
 4. Follow the prompts to select and organize your dotfiles and directories.
 
-5. Specify the project location where the dotfiles and directories will be stored. If not provided, a default location will be used.
+5. Specify the project location where the dotfiles and directories will be
+   stored. If not provided, a default location will be used.
 
-6. The selected dotfiles and directories will be listed, and their existence will be verified.
+6. The selected dotfiles and directories will be listed, and their existence
+   will be verified.
 
 7. Optionally, you can choose to run the dotbot script for further processing.
 
-8. If you wish to run the dotbot script separately, execute it with the following command:
+8. If you wish to run the dotbot script separately, execute it with the
+   following command:
 
 ```bash
 bash run_dotbot.sh
@@ -49,17 +53,18 @@ bash run_dotbot.sh
 
 ## Unit tests
 
-Unit tests for the dotbot.py module can be found in the tests directory. To run the tests, you will need pytest. Install pytest using the following command:
+Unit tests for the dotbot.py module can be found in the tests directory. To run
+the tests, you will need pytest. Install pytest using the following command:
 
 ```py
 pip install pytest
 ```
 
-To run the tests, navigate to the project directory and execute the following command:
+To run the tests, navigate to the project directory and execute the following
+command:
 
 ```py
 pytest -s
 ```
 
-License
-This project is licensed under the MIT License.
+License This project is licensed under the MIT License.
