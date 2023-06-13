@@ -5,24 +5,31 @@ set -e
 
 # Read the location from the environment variable    
 # shellcheck disable=SC2153
-location="$LOCATION" || $DOTBOT_LOCATION
+
+
+location=$(eval echo "$LOCATION" || eval echo "$DOTBOT_LOCATION")
 
 # Verify if the location exists
 while [[ ! -d "$location" ]]; do
-    echo "Invalid location: $location"
+    echo "location: $location does not exist"
+    read -rp "do you wish to create it (y/n)?" choice
+    if [[ $choice == "y" ]]; then
+        read -rp "enter location" location
+        mkdir -p "$location"
+    else
     read -rp "Please enter a valid location: " location
+    fi
 done
 
 # Read the dotbot entries from the dotbots_list.txt file
 dotbot_list="dotbots_list.txt"
 while IFS= read -r entry; do
-    # Concatenate the path with the entry
-    fullpath="$HOME/$entry"
+   fullpath="$entry"
 
     # Check if the entry exists
     if [[ -e "$fullpath" ]]; then
         echo "Copying '$entry' to '$location'"
-        cp -r "$fullpath" "$location"
+        cp -r "$fullpath" "$location/$entry"
     else
         echo "Entry '$entry' does not exist at '$fullpath'. Skipping."
     fi

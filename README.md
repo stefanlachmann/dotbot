@@ -68,3 +68,7 @@ pytest -s
 ```
 
 License This project is licensed under the MIT License.
+
+### Dotbot is Currently a work in progress
+
+### PR's are welcome

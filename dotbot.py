@@ -62,13 +62,13 @@ with open(dotbots_file, "w") as file:
         file.write(entry + "\n")
 
 # Read each entry from the list and check if it exists
-# for entry in dotbot_list:
-#     fullpath = os.path.join(os.path.expanduser("~"), entry)
+for entry in dotbot_list:
+    fullpath = os.path.join(os.path.expanduser("~"), entry)
 
-#     if os.path.exists(fullpath):
-#         print(f"Entry '{entry}' exists at '{fullpath}'.")
-#     else:
-#         print(f"Entry '{entry}' does not exist at '{fullpath}'.")
+    if os.path.exists(fullpath):
+        print(f"Entry '{entry}' exists at '{fullpath}'.")
+    else:
+        print(f"Entry '{entry}' does not exist at '{fullpath}'.")
 
 run_dotbot = input("Do you wish to run dotbot now? (y/n): ")
 if run_dotbot == "y":
