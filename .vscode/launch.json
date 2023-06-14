@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Bash Script",
+      "type": "bashdb",
+      "request": "launch",
+      "program": "${workspaceFolder}/sync_dots.sh",
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
